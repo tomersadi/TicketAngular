@@ -1,0 +1,22 @@
+# Node / Angular
+node_modules/
+dist/
+tmp/
+*.log
+.env
+.angular/
+
+# Angular build outputs
+out-tsc/
+coverage/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db

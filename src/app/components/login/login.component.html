@@ -1,0 +1,30 @@
+<mat-card class="login-card">
+  <mat-toolbar color="primary">Ticket System Login</mat-toolbar>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password" required />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="loginForm.invalid || loading"
+    >
+      Login
+      <mat-progress-spinner
+        *ngIf="loading"
+        diameter="20"
+        mode="indeterminate"
+      ></mat-progress-spinner>
+    </button>
+
+    <mat-error *ngIf="loginError">{{ loginError }}</mat-error>
+  </form>
+</mat-card>

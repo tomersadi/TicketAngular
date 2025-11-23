@@ -1,0 +1,26 @@
+<mat-card>
+  <!-- <mat-toolbar color="primary">Create New Ticket</mat-toolbar> -->
+
+  <form (ngSubmit)="submit()" #ticketForm="ngForm" class="ticket-form">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Full Name</mat-label>
+      <input matInput name="fullName" [(ngModel)]="ticket.fullName" required>
+    </mat-form-field> 
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email Address</mat-label>
+      <input matInput type="email" name="email" [(ngModel)]="ticket.email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Issue Description</mat-label>
+      <textarea matInput name="description" [(ngModel)]="ticket.description" required></textarea>
+    </mat-form-field> 
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!ticketForm.form.valid">Submit</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</mat-card>

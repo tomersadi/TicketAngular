@@ -1,0 +1,35 @@
+<mat-card *ngIf="ticket">
+  <mat-toolbar color="primary">Ticket Details</mat-toolbar>
+
+  <div class="ticket-info">
+    <p><strong>ID:</strong> {{ ticket.id }}</p>
+    <p><strong>Full Name:</strong> {{ ticket.fullName }}</p>
+    <p><strong>Email:</strong> {{ ticket.email }}</p>
+    <p><strong>Description:</strong> {{ ticket.description }}</p>
+    <p *ngIf="ticket.aiSummary"><strong>AI Summary:</strong> {{ ticket.aiSummary }}</p>
+  </div>
+
+  <form (ngSubmit)="update()" #detailForm="ngForm" class="ticket-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+     <mat-select [(value)]="ticket.status">
+    <mat-option [value]="TicketStatus.Open">Open</mat-option>
+    <mat-option [value]="TicketStatus.InProgress">In Progress</mat-option>
+    <mat-option [value]="TicketStatus.Resolved">Resolved</mat-option>
+    <mat-option [value]="TicketStatus.Closed">Closed</mat-option>
+  </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Resolution</mat-label>
+      <textarea matInput name="resolution" [(ngModel)]="ticket.resolution"></textarea>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!detailForm.form.valid">Update</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancel()">Back</button>
+    </div>
+  </form>
+</mat-card>
+
+<mat-spinner *ngIf="loading"></mat-spinner>

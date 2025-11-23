@@ -1,0 +1,18 @@
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 600px;
+  margin: 16px auto;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.ticket-info {
+  margin: 16px 0;
+}
+
