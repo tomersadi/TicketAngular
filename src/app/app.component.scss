@@ -1,0 +1,54 @@
+.home-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.home-btn {
+  margin: 20px;
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.welcome-container {
+  text-align: center;
+  padding-top: 80px;
+  animation: fadeIn 1.5s ease;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #3f51b5;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.actions button {
+  margin: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+}
+
+.ticket-img {
+  width: 180px;
+  animation: float 3s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
